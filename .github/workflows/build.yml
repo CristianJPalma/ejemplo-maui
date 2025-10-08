@@ -21,3 +21,10 @@ jobs:
 
       - name: Build Android project
         run: dotnet build MauiApp1/MauiApp1/MauiApp1.csproj -c Release -f net9.0-android
+      
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: MauiApp-Android
+          path: '**/bin/Release/net9.0-android/*.apk'
+
