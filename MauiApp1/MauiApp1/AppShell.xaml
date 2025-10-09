@@ -7,7 +7,7 @@
     Title="MauiApp1">
 
     <ShellContent
-        Title="Home"
+        Title="Contador de hábitos"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 

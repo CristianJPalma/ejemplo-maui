@@ -7,6 +7,20 @@
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
+
+            <Button
+                x:Name="icon1"
+                Text="icono1" 
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center" />
+            <Button
+                x:Name="icon2"
+                Text="icono2" 
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Fill" />
+
             <Image
                 Source="dotnet_bot.png"
                 HeightRequest="185"
