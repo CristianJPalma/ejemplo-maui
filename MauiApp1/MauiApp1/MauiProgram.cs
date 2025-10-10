@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using MauiApp1.SQLite;
+using Microsoft.Extensions.Logging;
 
 namespace MauiApp1;
 
@@ -15,6 +16,7 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
+		builder.Services.AddSingleton<HabitosDataBase>();
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif

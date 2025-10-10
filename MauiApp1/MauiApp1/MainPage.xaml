@@ -8,22 +8,9 @@
             Padding="30,0"
             Spacing="25">
 
-            <Button
-                x:Name="icon1"
-                Text="icono1" 
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
-            <Button
-                x:Name="icon2"
-                Text="icono2" 
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Fill" />
-
             <Image
                 Source="dotnet_bot.png"
-                HeightRequest="185"
+                HeightRequest="200"
                 Aspect="AspectFit"
                 SemanticProperties.Description="dot net bot in a hovercraft number nine" />
 
@@ -33,14 +20,22 @@
                 SemanticProperties.HeadingLevel="Level1" />
 
             <Label
+                x:Name="label1"
                 Text="Welcome to &#10;.NET Multi-platform App UI"
                 Style="{StaticResource SubHeadline}"
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
 
+            <Entry
+                x:Name="input"
+                Placeholder="Algo"/>
+
+            <CollectionView  
+                x:Name="myLayout" />
+            
             <Button
                 x:Name="CounterBtn"
-                Text="Click me" 
+                Text="Save" 
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Fill" />

@@ -1,23 +1,42 @@
-﻿namespace MauiApp1;
+﻿using MauiApp1.SQLite;
+
+namespace MauiApp1;
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
+	private readonly HabitosDataBase _data;
 
-	public MainPage()
+
+	public MainPage(HabitosDataBase data)
 	{
 		InitializeComponent();
+		_data = data;
+		CargarHabitos();
 	}
 
-	private void OnCounterClicked(object? sender, EventArgs e)
+	async void CargarHabitos() 
 	{
-		count++;
+		var list = await _data.GetHabitosAsync();
+        //myLayout.ItemsSource = list;
+    }
 
-		if (count == 1)
-			CounterBtn.Text = $"Clicked {count} time";
-		else
-			CounterBtn.Text = $"Clicked {count} times";
+	async void OnCounterClicked(object sender, EventArgs e)
+	{
+		string texto = input.Text;
+        if (string.IsNullOrWhiteSpace(input.Text))
+        {
+            await DisplayAlert("Name Required", "Please enter a name for the todo item.", "OK");
+            return;
+        }
+        var habito = new Habito
+        {
+            Name = texto,
+            Count = 0
+        };
+        await _data.SaveHabitoAsync(habito);
+        CargarHabitos();
 
-		SemanticScreenReader.Announce(CounterBtn.Text);
-	}
+        //var newLabel = new Label { Text = $"{texto}" };
+        //myLayout.Children.Add(newLabel);
+    }
 }
