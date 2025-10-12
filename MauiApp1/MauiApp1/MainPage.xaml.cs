@@ -17,7 +17,7 @@ public partial class MainPage : ContentPage
 	async void CargarHabitos() 
 	{
 		var list = await _data.GetHabitosAsync();
-        //myLayout.ItemsSource = list;
+        myLayout.ItemsSource = list;
     }
 
 	async void OnCounterClicked(object sender, EventArgs e)

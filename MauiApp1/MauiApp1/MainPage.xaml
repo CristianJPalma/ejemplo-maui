@@ -30,8 +30,14 @@
                 x:Name="input"
                 Placeholder="Algo"/>
 
-            <CollectionView  
-                x:Name="myLayout" />
+            <CollectionView x:Name="myLayout">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                            <Label Text="{Binding Name}" FontSize="18" />
+                            <Label Text="{Binding Count}" FontAttributes="Bold" />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
             
             <Button
                 x:Name="CounterBtn"
