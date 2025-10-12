@@ -33,8 +33,10 @@
             <CollectionView x:Name="myLayout">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
+                        <HorizontalStackLayout>
                             <Label Text="{Binding Name}" FontSize="18" />
                             <Label Text="{Binding Count}" FontAttributes="Bold" />
+                        </HorizontalStackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>

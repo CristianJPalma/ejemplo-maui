@@ -14,7 +14,7 @@ public partial class MainPage : ContentPage
 		CargarHabitos();
 	}
 
-	async void CargarHabitos() 
+	public async void CargarHabitos() 
 	{
 		var list = await _data.GetHabitosAsync();
         myLayout.ItemsSource = list;
@@ -22,7 +22,8 @@ public partial class MainPage : ContentPage
 
 	async void OnCounterClicked(object sender, EventArgs e)
 	{
-		string texto = input.Text;
+        string texto = input.Text;
+        
         if (string.IsNullOrWhiteSpace(input.Text))
         {
             await DisplayAlert("Name Required", "Please enter a name for the todo item.", "OK");
