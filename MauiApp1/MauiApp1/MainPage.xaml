@@ -1,19 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiApp1.MainPage"
-             Title="Habitos">
+             x:Class="MauiApp1.MainPage">
 
     <ScrollView>
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
 
-            <Image
+            <!-- <Image
                 Source="dotnet_bot.png"
                 HeightRequest="200"
                 Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a hovercraft number nine" />
+                SemanticProperties.Description="dot net bot in a hovercraft number nine" /> -->
 
             <Label
                 Text="Hello, World!"
@@ -35,7 +34,7 @@
                 x:Name="CounterBtn"
                 Text="Save" 
                 SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
+                Clicked="GuardarHabitos"
                 HorizontalOptions="Fill" />
 
             <CollectionView x:Name="myLayout">
@@ -43,15 +42,18 @@
                     <DataTemplate>
                         <VerticalStackLayout Padding="10">
                             <Label Text="{Binding Name}" FontSize="18" />
-                            <HorizontalStackLayout>
-                                <Label Text="{Binding Count}" FontSize="17" FontAttributes="Bold" 
+                            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="5">
+                                <Label Grid.Column="0" Text="{Binding Count}" FontSize="17" FontAttributes="Bold" 
                                     />
-                                <Button Text="+1"
-                                    Command="{Binding OnCounterHabitoClicked}" 
+                                <Button
+                                    Text="+1"
+                                    Grid.Column="1"
+                                    CommandParameter="{Binding .}"
+                                    Clicked="OnCounterHabitoClicked" 
                                     FontSize="17" 
                                     FontAttributes="Bold"
                                 />
-                            </HorizontalStackLayout>
+                            </Grid>
                         </VerticalStackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

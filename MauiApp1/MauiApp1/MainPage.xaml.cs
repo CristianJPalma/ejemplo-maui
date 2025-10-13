@@ -20,7 +20,7 @@ public partial class MainPage : ContentPage
         myLayout.ItemsSource = list;
     }
 
-    public async void OnCounterClicked(object sender, EventArgs e)
+    public async void GuardarHabitos(object sender, EventArgs e)
     {
         string texto = input.Text;
 
