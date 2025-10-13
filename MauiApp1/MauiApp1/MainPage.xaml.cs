@@ -20,13 +20,13 @@ public partial class MainPage : ContentPage
         myLayout.ItemsSource = list;
     }
 
-	async void OnCounterClicked(object sender, EventArgs e)
-	{
+    public async void OnCounterClicked(object sender, EventArgs e)
+    {
         string texto = input.Text;
-        
+
         if (string.IsNullOrWhiteSpace(input.Text))
         {
-            await DisplayAlert("Name Required", "Please enter a name for the todo item.", "OK");
+            //await DisplayAlert("Name Required", "Please enter a name for the todo item.", "OK");
             return;
         }
         var habito = new Habito
@@ -36,8 +36,14 @@ public partial class MainPage : ContentPage
         };
         await _data.SaveHabitoAsync(habito);
         CargarHabitos();
+    }
 
-        //var newLabel = new Label { Text = $"{texto}" };
-        //myLayout.Children.Add(newLabel);
+    public async void OnCounterHabitoClicked(object sender, EventArgs e)
+    {
+        var button = (Button)sender;
+        var habito = (Habito)button.CommandParameter;
+        habito.Count++;
+        await _data.SaveHabitoAsync(habito);
+        CargarHabitos();
     }
 }
