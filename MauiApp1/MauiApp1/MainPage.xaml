@@ -45,13 +45,12 @@
                             <Label Text="{Binding Name}" FontSize="18" />
                             <HorizontalStackLayout>
                                 <Label Text="{Binding Count}" FontSize="17" FontAttributes="Bold" 
-                                    HorizontalOptions="centerAndExpand"
                                     />
                                 <Button Text="+1"
                                     Command="{Binding OnCounterHabitoClicked}" 
                                     FontSize="17" 
                                     FontAttributes="Bold"
-                                    HorizontalOptions="EndAndExpand" />
+                                />
                             </HorizontalStackLayout>
                         </VerticalStackLayout>
                     </DataTemplate>
