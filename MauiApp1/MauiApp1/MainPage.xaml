@@ -47,41 +47,44 @@
                     HorizontalOptions="Fill" />
             </Border>
             <CollectionView x:Name="myLayout">
-                <Border
-                    StrokeThickness="2">
+                <CollectionView.Header>
                     <Label 
                         Text="Mis Hábitos" 
                         FontSize="22" 
                         FontAttributes="Bold" 
                         HorizontalOptions="Center" 
                         Padding="5"/>
+                </CollectionView.Header>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <VerticalStackLayout Padding="10">
-                            <Label Text="{Binding Name}" FontSize="18" />
-                            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="5">
-                                <Border
-                                    StrokeThickness="2">
-                                    <Label 
-                                        Grid.Column="0" 
-                                        Text="{Binding Count}" 
+                        <Border
+                            StrokeThickness="2">
+                            <VerticalStackLayout Padding="10">
+                                <Label Text="{Binding Name}" FontSize="18" />
+                                <Grid ColumnDefinitions="*,Auto" ColumnSpacing="5">
+                                    <Border
+                                        StrokeThickness="2"
+                                        BackgroundColor="#FF99EBDA">
+                                        <Label 
+                                            Grid.Column="0" 
+                                            Text="{Binding Count}" 
+                                            FontSize="17" 
+                                            FontAttributes="Bold" 
+                                            HorizontalOptions="Center" />
+                                    </Border>
+                                    <Button
+                                        Text="+1"
+                                        Grid.Column="1"
+                                        CommandParameter="{Binding .}"
+                                        Clicked="OnCounterHabitoClicked" 
                                         FontSize="17" 
-                                        FontAttributes="Bold" 
-                                        HorizontalOptions="Center" />
-                                </Border>
-                                <Button
-                                    Text="+1"
-                                    Grid.Column="1"
-                                    CommandParameter="{Binding .}"
-                                    Clicked="OnCounterHabitoClicked" 
-                                    FontSize="17" 
-                                    FontAttributes="Bold"
-                                />
-                            </Grid>
-                        </VerticalStackLayout>
+                                        FontAttributes="Bold"
+                                    />
+                                </Grid>
+                            </VerticalStackLayout>
+                        </Border>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
-                </Border>
             </CollectionView>
             
         </VerticalStackLayout>
