@@ -14,7 +14,7 @@
                 Aspect="AspectFit"
                 SemanticProperties.Description="dot net bot in a hovercraft number nine" /> -->
 
-            <Label
+            <!-- <Label
                 Text="Hello, World!"
                 Style="{StaticResource Headline}"
                 SemanticProperties.HeadingLevel="Level1" />
@@ -24,27 +24,51 @@
                 Text="Welcome to &#10;.NET Multi-platform App UI"
                 Style="{StaticResource SubHeadline}"
                 SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I" /> -->
 
-            <Entry
-                x:Name="input"
-                Placeholder="Algo"/>
-
-            <Button
-                x:Name="CounterBtn"
-                Text="Save" 
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="GuardarHabitos"
-                HorizontalOptions="Fill" />
-
+            <Border
+                StrokeThickness="2">
+                <Label 
+                    Text="+ Agregar un hábito" 
+                    FontSize="22" 
+                    HorizontalOptions="Start" 
+                    Padding="5"/>
+                <Border
+                StrokeThickness="2">
+                    <Entry
+                        x:Name="input"
+                        Placeholder="Ej. Beber agua"/>
+                </Border>
+                <Button
+                    x:Name="CounterBtn"
+                    Text="Agregar Hábito" 
+                    SemanticProperties.Hint="Counts the number of times you click"
+                    Clicked="GuardarHabitos"
+                    HorizontalOptions="Fill" />
+            </Border>
             <CollectionView x:Name="myLayout">
+                <Border
+                    StrokeThickness="2">
+                    <Label 
+                        Text="Mis Hábitos" 
+                        FontSize="22" 
+                        FontAttributes="Bold" 
+                        HorizontalOptions="Center" 
+                        Padding="5"/>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <VerticalStackLayout Padding="10">
                             <Label Text="{Binding Name}" FontSize="18" />
                             <Grid ColumnDefinitions="*,Auto" ColumnSpacing="5">
-                                <Label Grid.Column="0" Text="{Binding Count}" FontSize="17" FontAttributes="Bold" 
-                                    />
+                                <Border
+                                    StrokeThickness="2">
+                                    <Label 
+                                        Grid.Column="0" 
+                                        Text="{Binding Count}" 
+                                        FontSize="17" 
+                                        FontAttributes="Bold" 
+                                        HorizontalOptions="Center" />
+                                </Border>
                                 <Button
                                     Text="+1"
                                     Grid.Column="1"
@@ -57,6 +81,7 @@
                         </VerticalStackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
+                </Border>
             </CollectionView>
             
         </VerticalStackLayout>
