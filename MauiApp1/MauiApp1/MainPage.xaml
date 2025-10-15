@@ -25,7 +25,7 @@
                     StrokeShape="RoundRectangle 8">
                         <Entry
                             x:Name="input"
-                            BorderColor="Transparent"
+                            Visual="None"
                             FontSize="15"
                             Placeholder="Ej. Beber agua"/>
                     </Border>
