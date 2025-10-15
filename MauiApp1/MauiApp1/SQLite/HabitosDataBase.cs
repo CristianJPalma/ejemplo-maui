@@ -31,5 +31,11 @@ namespace MauiApp1.SQLite
             else
                 return await database.InsertAsync(habito);
         }
+
+        public async Task<int> DeleteHabitoAsync(Habito habito)
+        {
+            await Init();
+            return await database.DeleteAsync(habito);
+        }
     }
 }

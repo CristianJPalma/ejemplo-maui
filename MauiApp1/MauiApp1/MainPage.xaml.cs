@@ -46,4 +46,12 @@ public partial class MainPage : ContentPage
         await _data.SaveHabitoAsync(habito);
         CargarHabitos();
     }
+
+    public async void OnDeleteClicked(object sender, EventArgs e)
+    {
+        var button = (ImageButton)sender;
+        var habito = (Habito)button.CommandParameter;
+        await _data.DeleteHabitoAsync(habito);
+        CargarHabitos();
+    }
 }
