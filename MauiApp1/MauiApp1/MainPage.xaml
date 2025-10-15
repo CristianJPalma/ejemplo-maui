@@ -102,7 +102,6 @@
                                         Source="trash.svg"
                                         Grid.Column="2"
                                         HeightRequest="12.33"
-                                        TintColor="White"
                                         BackgroundColor="#ff0000"
                                         Padding="8,12"
                                         Clicked="OnDeleteClicked" />
