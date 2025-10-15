@@ -47,16 +47,19 @@
                 StrokeShape="RoundRectangle 8">
                 <CollectionView x:Name="myLayout">
                     <CollectionView.Header>
-                        <BoxView 
-                            HeightRequest="1"
-                            VerticalOptions="End"
-                            HorizontalOptions="Fill"/>   
-                        <Label 
-                            Text="Mis Hábitos" 
-                            FontSize="17" 
-                            FontAttributes="Bold" 
-                            HorizontalOptions="Start" 
-                            Padding="5"/>
+                        <VerticalStackLayout>
+                            <BoxView 
+                                HeightRequest="1"
+                                VerticalOptions="End"
+                                HorizontalOptions="Fill"
+                                BackgroundColor="{AppThemeBinding Light=#CCCCCC, Dark=#333333}" />
+                            <Label 
+                                Text="Mis Hábitos" 
+                                FontSize="17" 
+                                FontAttributes="Bold" 
+                                HorizontalOptions="Start" 
+                                Padding="5" />
+                        </VerticalStackLayout>
                     </CollectionView.Header>
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
