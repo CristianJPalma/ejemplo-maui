@@ -100,7 +100,8 @@
                                             FontAttributes="Bold"/>
                                         <ImageButton
                                             Source="trash.svg"
-                                            HeightRequest="12.33"
+                                            CommandParameter="{Binding .}"
+                                            Aspect="AspectFit"
                                             BackgroundColor="#ff0000"
                                             Padding="8,12"
                                             Clicked="OnDeleteClicked" />
