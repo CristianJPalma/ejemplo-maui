@@ -90,21 +90,21 @@
                                             HorizontalOptions="Center"
                                             VerticalOptions="Center"/>
                                     </Border>
-                                    <Button
-                                        Text="+1"
-                                        Grid.Column="1"
-                                        Padding="8,10"
-                                        CommandParameter="{Binding .}"
-                                        Clicked="OnCounterHabitoClicked" 
-                                        FontSize="15" 
-                                        FontAttributes="Bold"/>
-                                    <ImageButton
-                                        Source="trash.svg"
-                                        Grid.Column="2"
-                                        HeightRequest="12.33"
-                                        BackgroundColor="#ff0000"
-                                        Padding="8,12"
-                                        Clicked="OnDeleteClicked" />
+                                    <HorizontalStackLayout Grid.Column="1" Spacing="5">
+                                        <Button
+                                            Text="+1"
+                                            Padding="8,10"
+                                            CommandParameter="{Binding .}"
+                                            Clicked="OnCounterHabitoClicked" 
+                                            FontSize="15" 
+                                            FontAttributes="Bold"/>
+                                        <ImageButton
+                                            Source="trash.svg"
+                                            HeightRequest="12.33"
+                                            BackgroundColor="#ff0000"
+                                            Padding="8,12"
+                                            Clicked="OnDeleteClicked" />
+                                    </HorizontalStackLayout>
                                 </Grid>
                             </VerticalStackLayout>
                         </DataTemplate>
